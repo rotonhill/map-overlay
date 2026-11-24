@@ -1,5 +1,5 @@
-  function initializeMapOverlay(mapName, mapwarperId) {
-    const map = L.map(mapName).setView([41.087903, -73.435973], 15);
+  function initializeMapOverlay(mapName, mapwarperId, center) {
+    const map = L.map(mapName).setView(center || [41.087903, -73.435973], 15);
 
     // 2. Base Tile Layer (OpenStreetMap)
     const osmBaseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -38,5 +38,5 @@
   }
 
   window.onload = function() {
-    initializeMapOverlay(mapName, mapwarperId);
+    initializeMapOverlay(mapName, mapwarperId, center);
   };
