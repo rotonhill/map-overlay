@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Map experiment</title>
+    </head>
+    <body>
+<style>
+    @import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+    .mapbox {
+        /* Set a fixed height and width for the map to render correctly */
+        height: 85%;
+        width: 100%;
+        margin-top: 10px;
+        /* Ensure the map is displayed as a block element */
+        display: block;
+    }
+
+    /* Style for the slider control panel */
+    #slider-container {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px 0;
+        font-family: Arial, sans-serif;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #opacity-slider {
+        width: 100%;
+    }
+</style>
+<script>
+    const mapName = '1867-sn';
+    const mapwarperId = 98510;
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        crossorigin=""></script>
+<script src="map-overlay.js" crossorigin=""></script>
+<div id="1867-sn" class="mapbox"></div>
+<div id="slider-container-1867-sn">
+    <label for="opacity-slider-1867-sn">Opacity:</label>
+    <input type="range" id="opacity-slider-1867-sn" min="0" max="1" step="0.01" value="0.75" />
+    <span id="opacity-value-1867-sn">75%</span>
+</div>
+    </body>
+</html>
