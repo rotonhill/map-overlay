@@ -2,35 +2,30 @@
     <head>
         <title>Norwalk 1867</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="map-overlay.css">
     </head>
     <body>
-<style>
-    @import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
-
-    .mapbox {
-        /* Set a fixed height and width for the map to render correctly */
-        height: 85%;
-        width: 100%;
-        margin-top: 10px;
-        /* Ensure the map is displayed as a block element */
-        display: block;
-    }
-
-    /* Style for the slider control panel */
-    #slider-container {
-        width: 300px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px 0;
-        font-family: Arial, sans-serif;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    }
-
-    #opacity-slider {
-        width: 100%;
-    }
-</style>
+    <div id="info-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-card">
+            <h2 id="modal-title">About This Map</h2>
+            <p>
+               This map is titled <b>Town of Norwalk, Fairfield Co., Conn.</b>, and comes from an atlas
+               published in 1867 by Frederick W. Beers. I think it's from <i>Atlas of New York and Vicinity</i>.
+            </p>
+            <p>
+               This map has more detail of the countryside of Norwalk, outside of the towns, including
+               Roton Hill. There's <a href="1867-sn.html">another map from the same atlas</a> that focuses
+               on the in-town areas. The source map also includes a section that focuses on Winnipauk.
+            </p>
+            <p>
+                Source: <a href="https://www.davidrumsey.com/luna/servlet/s/pj4b8q">David Rumsey Map Collection</a>
+            </p>
+            <div class="modal-footer">
+                <button id="modal-got-it" type="button" class="got-it-btn">Got It</button>
+            </div>
+        </div>
+    </div>
 <script>
     const mapName = '1867';
     const mapwarperId = 98488;

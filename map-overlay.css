@@ -1,0 +1,109 @@
+.mapbox {
+    /* Set a fixed height and width for the map to render correctly */
+    height: 85%;
+    width: 100%;
+    margin-top: 10px;
+    /* Ensure the map is displayed as a block element */
+    display: block;
+}
+
+/* Style for the slider control panel */
+#slider-container {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#opacity-slider {
+    width: 100%;
+}
+
+/* Round '?' Leaflet button */
+.leaflet-control-info-round {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  color: #222;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+  font: bold 17px/30px system-ui, -apple-system, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leaflet-control-info-round:hover {
+  background: #f4f4f4;
+}
+
+/* Full-screen dimmed backdrop */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-backdrop.open {
+  display: flex;
+}
+
+/* Centered modal window */
+.modal-card {
+  background: #fff;
+  color: #222;
+  max-width: 440px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  font: 15px/1.5 system-ui, -apple-system, sans-serif;
+}
+
+.modal-card h2 {
+  margin: 0 0 10px;
+  font-size: 19px;
+}
+
+.modal-card p {
+  margin: 0 0 12px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.got-it-btn {
+  background: #2b579a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 18px;
+  font: 600 14px system-ui, -apple-system, sans-serif;
+  cursor: pointer;
+}
+
+.got-it-btn:hover {
+  background: #1f4175;
+}
+
+/* Ensure the modal is accessible */
+.modal-backdrop:focus {
+  outline: none;
+}

@@ -2,35 +2,23 @@
     <head>
         <title>Norwalk 1847</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="map-overlay.css">
     </head>
     <body>
-<style>
-    @import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
-
-    .mapbox {
-        /* Set a fixed height and width for the map to render correctly */
-        height: 85%;
-        width: 100%;
-        margin-top: 10px;
-        /* Ensure the map is displayed as a block element */
-        display: block;
-    }
-
-    /* Style for the slider control panel */
-    #slider-container {
-        width: 300px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px 0;
-        font-family: Arial, sans-serif;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    }
-
-    #opacity-slider {
-        width: 100%;
-    }
-</style>
+    <div id="info-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-card">
+            <h2 id="modal-title">About This Map</h2>
+            <p>This is from <b>The Principal Parts of Norwalk in the year 1847 with a
+                plan of the Ancient Settlement</b>, published by Edwin Hall. Source:
+                <a href="https://digitalcollections.nypl.org/items/3f7441e0-3c86-0134-9afc-00505686a51c">
+                    The New York Public Library Digital Collections</a>.
+            </p>
+            <div class="modal-footer">
+                <button id="modal-got-it" type="button" class="got-it-btn">Got It</button>
+            </div>
+        </div>
+    </div>
 <script>
     const mapName = '1847';
     const mapwarperId = 99350;

@@ -1,49 +1,38 @@
 <html>
-    <head>
-        <title>Norwalk 1894</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    </head>
-    <body>
-<style>
-    @import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
 
-    .mapbox {
-        /* Set a fixed height and width for the map to render correctly */
-        height: 85%;
-        width: 100%;
-        margin-top: 10px;
-        /* Ensure the map is displayed as a block element */
-        display: block;
-    }
+<head>
+    <title>Norwalk 1894</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="map-overlay.css">
+</head>
 
-    /* Style for the slider control panel */
-    #slider-container {
-        width: 300px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px 0;
-        font-family: Arial, sans-serif;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    }
+<body>
+    <div id="info-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-card">
+            <h2 id="modal-title">About This Map</h2>
+            <p>
+                This is a street map from the 1894 edition of the <b>Norwalk City Directory</b>,
+                published by Price & Lee of New Haven, Connecticut.
+            </p>
+            <div class="modal-footer">
+                <button id="modal-got-it" type="button" class="got-it-btn">Got It</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const mapName = '1894';
+        const mapwarperId = 98726;
+        const center = [41.087903, -73.435973];
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="map-overlay.js" crossorigin=""></script>
+    <div id="1894" class="mapbox"></div>
+    <div id="slider-container-1894">
+        <label for="opacity-slider-1894">Opacity:</label>
+        <input type="range" id="opacity-slider-1894" min="0" max="1" step="0.01" value="0.75" />
+        <span id="opacity-value-1894">75%</span>
+    </div>
+</body>
 
-    #opacity-slider {
-        width: 100%;
-    }
-</style>
-<script>
-    const mapName = '1894';
-    const mapwarperId = 98726;
-    const center = [41.087903, -73.435973];
-</script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        crossorigin=""></script>
-<script src="map-overlay.js" crossorigin=""></script>
-<div id="1894" class="mapbox"></div>
-<div id="slider-container-1894">
-    <label for="opacity-slider-1894">Opacity:</label>
-    <input type="range" id="opacity-slider-1894" min="0" max="1" step="0.01" value="0.75" />
-    <span id="opacity-value-1894">75%</span>
-</div>
-    </body>
 </html>

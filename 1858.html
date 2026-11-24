@@ -1,49 +1,40 @@
 <html>
-    <head>
-        <title>Norwalk 1858</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    </head>
-    <body>
-<style>
-    @import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
 
-    .mapbox {
-        /* Set a fixed height and width for the map to render correctly */
-        height: 85%;
-        width: 100%;
-        margin-top: 10px;
-        /* Ensure the map is displayed as a block element */
-        display: block;
-    }
+<head>
+    <title>Norwalk 1858</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="map-overlay.css">
+</head>
 
-    /* Style for the slider control panel */
-    #slider-container {
-        width: 300px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px 0;
-        font-family: Arial, sans-serif;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    }
+<body>
+    <div id="info-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-card">
+            <h2 id="modal-title">About This Map</h2>
+            <p>This is from <b>Clark's Map of Fairfield County, Connecticut</b>, published by
+                Richard Clark in 1858. It's available at
+                <a href="https://digitalcollections.nypl.org/items/581daa20-326b-0134-266e-00505686a51c?canvasIndex=4">
+                    The New York Public Library Digital Collections</a>.
+            </p>
+            <div class="modal-footer">
+                <button id="modal-got-it" type="button" class="got-it-btn">Got It</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const mapName = '1858';
+        const mapwarperId = 98509;
+        const center = [41.087903, -73.435973];
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="map-overlay.js" crossorigin=""></script>
 
-    #opacity-slider {
-        width: 100%;
-    }
-</style>
-<script>
-    const mapName = '1858';
-    const mapwarperId = 98509;
-    const center = [41.087903, -73.435973];
-</script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        crossorigin=""></script>
-<script src="map-overlay.js" crossorigin=""></script>
-<div id="1858" class="mapbox"></div>
-<div id="slider-container-1858">
-    <label for="opacity-slider-1858">Opacity:</label>
-    <input type="range" id="opacity-slider-1858" min="0" max="1" step="0.01" value="0.75" />
-    <span id="opacity-value-1858">75%</span>
-</div>
-    </body>
+    <div id="1858" class="mapbox"></div>
+    <div id="slider-container-1858">
+        <label for="opacity-slider-1858">Opacity:</label>
+        <input type="range" id="opacity-slider-1858" min="0" max="1" step="0.01" value="0.75" />
+        <span id="opacity-value-1858">75%</span>
+    </div>
+</body>
+
 </html>
